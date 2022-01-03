@@ -11,7 +11,11 @@
 
 import java.util.Scanner;
 
-final class Factorials1{
+/**
+* Factorial program.
+*/
+
+final class Factorials {
 
     /**
     * Prevent instantiation.
@@ -23,7 +27,7 @@ final class Factorials1{
     *
     */
 
-private Factorials1() {
+    private Factorials() {
         throw new IllegalStateException("Cannot be instantiated");
     }
 
@@ -33,43 +37,42 @@ private Factorials1() {
     * @param args No args will be used
     */
 
-   public static void main(final String[] args) {
-      //Scanner object for capturing the user input
-      final Scanner scanner = new Scanner(System.in);
-      System.out.println("Enter the number:");
-      //Stored the entered value in variable
-try {
-      final int num = scanner.nextInt();
-      //Called the user defined function fact
+    public static void main(final String[] args) {
+        // Scanner object for capturing the user input.
+        final Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        // Stored the entered value in variable.
+        try {
+            final int num = scanner.nextInt();
+            // Called the user defined function fact.
 
-
-        int factorial = fact(num);
-      System.out.println("The factorial of entered number is: " + factorial);
-}
-    catch (java.util.InputMismatchException ex) {
-    System.out.println("That was not a valid number.");
-}
+            final int factorial = fact(num);
+            System.out.println("The factorial of entered number is: " + factorial);
+        }
+        catch (java.util.InputMismatchException ex) {
+            System.out.println("That was not a valid number.");
+        }
+    }
     /**
     * The starting factorial function.
-    *             
-    * @param number is a number
-    *       
+    *
+    * @param number is user input
+    *
     * @return factorial of number
     */
 
-}
-   public static int fact(final int number) {
+    public static int fact(final int number) {
 
-       int output;
-       if(number == 0){
-        output = 1;
-       }
+        final int output;
+        if (number == 0) {
+            output = 1;
+        }
         else if (number > 0) {
-       output = fact(number - 1)* number;
-}
+            output = fact(number - 1) * number;
+        }
         else {
-        output = fact(number + 1)* number;
-}
-       return output;   
- }
+            output = fact(number + 1) * number;
+        }
+        return output;
+    }
 }
